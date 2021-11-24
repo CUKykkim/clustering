@@ -172,7 +172,7 @@ print("Silhouette with squared euclidean distance = " + str(silhouette))
 ```
 from pyspark.ml.clustering import BisectingKMeans
 bkm = BisectingKMeans().setK(2).setSeed(1)
-model = kmeans.fit(dataset.select('features'))    // bisecting kmeans 학습
+model = bkm.fit(dataset.select('features'))    // bisecting kmeans 학습
 transformed = model.transform(dataset)            // 학습된 모델을 dataframe 형태로 변환
 transformed.show()                                // 군집화 결과 보기
 ```
